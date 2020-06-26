@@ -14,8 +14,8 @@ py2 = 0
 #v = velocity, a = acceleration
 T1_v = 0
 T2_v = 0
-T1_a = 0.0050
-T2_a = -0.0065
+T1_a = 0
+T2_a = 0
 
 
 
@@ -64,14 +64,14 @@ def draw():
     t12= 2*sin(T1-T2)*m2*(pow(T2_v,2)*L2 + pow(T1_v,2)*L1*cos(T1-T2))
     t13= L1 * (2*m1+m2-m2*cos(2*T1-2*T2))
     
-    #T1_a = (t11-t12)/t13
+    T1_a = (t11-t12)/t13
     #T1_a += 0.1
     
     #T2_a formula
     t21= 2*sin(T1-T2)*(pow(T1_v,2)*L1*(m1 + m2)+g*(m1+m2)*cos(T1)+pow(T2_v,2)*L2*m2*cos(T1-T2))
     t22= L2 * (2*m1+m2-m2*cos(2*T1-2*T2))
 
-    #T2_a = t21 / t22
+    T2_a = t21 / t22
     #T2_a -= 0.2
     
     #Change velocity with acceleration then change the angle with the velocity.
